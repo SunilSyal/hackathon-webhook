@@ -78,9 +78,13 @@ restService.post('/fb-test', function(req, res) {
 
     var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
     var fb_msg = {
-        attachment: {
-            type: "image",
-            payload: {}
+        "message": {
+            "attachment": {
+                "type": "image",
+                "payload": {
+                    "url": "https://petersapparel.com/img/shirt.png"
+                }
+            }
         }
     }
     return res.json({
