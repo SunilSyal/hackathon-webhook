@@ -17,10 +17,12 @@ restService.post('/echo', function(req, res) {
         speech: speech,
         displayText: speech,
         source: 'webhook-echo',
-        attachment: {
-            type: "image",
-            payload: {
-                url: "https://petersapparel.com/img/shirt.png"
+        facebook: {
+            attachment: {
+                type: "image",
+                payload: {
+
+                }
             }
         }
     });
