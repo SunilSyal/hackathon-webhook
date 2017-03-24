@@ -16,15 +16,7 @@ restService.post('/echo', function(req, res) {
     return res.json({
         speech: speech,
         displayText: speech,
-        source: 'webhook-echo',
-        facebook: {
-            attachment: {
-                type: "image",
-                payload: {
-
-                }
-            }
-        }
+        source: 'webhook-echo'
     });
 });
 
@@ -78,6 +70,25 @@ restService.post('/slack-test', function(req, res) {
         source: 'webhook-echo-sample',
         data: {
             "slack": slack_message
+        }
+    });
+});
+
+restService.post('/fb-test', function(req, res) {
+
+    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+    var fb_msg = {
+        attachment: {
+            type: "image",
+            payload: {}
+        }
+    }
+    return res.json({
+        speech: speech,
+        displayText: speech,
+        source: 'webhook-echo-fb',
+        data: {
+            "facebook": fb_msg
         }
     });
 });
