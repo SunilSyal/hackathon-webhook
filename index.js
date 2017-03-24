@@ -16,7 +16,15 @@ restService.post('/echo', function(req, res) {
     return res.json({
         speech: speech,
         displayText: speech,
-        source: 'webhook-echo'
+        source: 'webhook-echo',
+        "message": {
+            "attachment": {
+                "type": "audio",
+                "payload": {
+                    "url": "https://petersapparel.com/bin/clip.mp3"
+                }
+            }
+        }
     });
 });
 
