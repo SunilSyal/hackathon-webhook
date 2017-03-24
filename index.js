@@ -17,7 +17,7 @@ restService.post('/echo', function(req, res) {
         speech: speech,
         displayText: speech,
         source: 'webhook-echo',
-        messages: {
+        messages: [{
             "payload": {
                 "facebook": {
                     "attachment": {
@@ -40,7 +40,7 @@ restService.post('/echo', function(req, res) {
                     }
                 }
             }
-        }
+        }]
     });
 });
 
