@@ -17,11 +17,27 @@ restService.post('/echo', function(req, res) {
         speech: speech,
         displayText: speech,
         source: 'webhook-echo',
-        "message": {
-            "attachment": {
-                "type": "audio",
-                "payload": {
-                    "url": "https://petersapparel.com/bin/clip.mp3"
+        messages: {
+            "payload": {
+                "facebook": {
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "button",
+                            "text": "What do you want to do next?",
+                            "buttons": [{
+                                    "type": "web_url",
+                                    "url": "https://login.microsoftonline.com/bluebankb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_BlueBankSUSI&client_Id=0f7ef810-2f9c-424c-942a-48c6ea361d9a&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fgoogle.com%3A44316%2F.auth%2Flogin%2Faad%2Fcallback&scope=openid&response_type=id_token&prompt=login",
+                                    "title": "Show Website"
+                                },
+                                {
+                                    "type": "postback",
+                                    "title": "Start Chatting",
+                                    "payload": "USER_DEFINED_PAYLOAD"
+                                }
+                            ]
+                        }
+                    }
                 }
             }
         }
