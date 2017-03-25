@@ -141,7 +141,8 @@ function fnProductList(productData) {
         }]*/
 
     var list = [];
-
+console.log('++++++++++++++++++++++++++++++')
+console.log(productData)
     for (var i = 0; i < productData.length; i++) {
         var product = productData[i];
         var obj = {
