@@ -14,10 +14,12 @@ restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
 
-
+console.log("Entry = ==============")
     var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
-
+    console.log("--------------")
+console.log(productType)
     return $http.get('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
+      console.log("Here I am")
         return res.json({
             speech: speech,
             source: 'webhook-echo-one',
