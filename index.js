@@ -26,24 +26,9 @@ restService.post('/echo', function(req, res) {
                         "attachment": {
                             "type": "image",
                             "payload": {
-                                "url": "https://petersapparel.com/img/shirt.png"
+                                "url": "https://scontent.xx.fbcdn.net/v/t39.2365-6/13466577_1753800631570799_2129488873_n.png?oh=27e67193013babbcedddca240a7fbff1&oe=5954F96A"
                             }
                         }
-                    },
-                    "kik": {
-                        "type": "",
-                        "body": ""
-                    },
-                    "slack": {
-                        "text": "",
-                        "attachments": []
-                    },
-                    "telegram": {
-                        "text": ""
-                    },
-                    "viber": {
-                        "type": "text",
-                        "text": ""
                     }
                 },
                 "type": 4
