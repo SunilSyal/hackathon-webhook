@@ -137,7 +137,8 @@ function fnProductList() {
                     }
                 }
             }
-        }
+        },
+        "type": 4
     }
 
     /*var list = {
