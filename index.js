@@ -102,22 +102,22 @@ function fnProductList() {
     var productData = [{
         title: "Classic T-Shirt Collection",
         image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        subtitle: "See all our colors",
+        price: "20",
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
         image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        subtitle: "See all our colors",
+        price: "30",
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
         image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        subtitle: "See all our colors",
+        price: "40",
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
         image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        subtitle: "See all our colors",
+        price: "50",
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }]
 
@@ -127,12 +127,27 @@ function fnProductList() {
                 "attachment": {
                     "type": "template",
                     "payload": {
-                        "template_type": "list",
-                        "elements": [],
-                        "buttons": [{
-                            "title": "View More",
-                            "type": "postback",
-                            "payload": "payload"
+                        "template_type": "generic",
+                        "elements": [{
+                            "title": "Welcome to Peter\'s Hats",
+                            "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+                            "subtitle": "We\'ve got the right hat for everyone.",
+                            "default_action": {
+                                "type": "web_url",
+                                "url": "https://google.com",
+                                "messenger_extensions": true,
+                                "webview_height_ratio": "tall",
+                                "fallback_url": "https://google.com/"
+                            },
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": "https://google.com",
+                                "title": "View Website"
+                            }, {
+                                "type": "postback",
+                                "title": "Start Chatting",
+                                "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                            }]
                         }]
                     }
                 }
