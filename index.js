@@ -101,98 +101,46 @@ function fnProductList() {
 
     var productData = [{
         title: "Classic T-Shirt Collection",
-        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+        subtitle: "subtitle",
+        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         price: "20",
-        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
+        rating: "4"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+        subtitle: "subtitle",
+        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         price: "30",
-        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
+        rating: "5"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+        subtitle: "subtitle",
+        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         price: "40",
-        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
+        rating: "2"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+        subtitle: "subtitle",
+        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         price: "50",
-        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
+        rating: "1"
     }]
 
-    var list = [{
-            "type": 0,
-            "speech": ""
-        },
-        {
-            "title": "Jeans @ £30",
-            "subtitle": "Blah Blah",
-            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/polytechnics-cbc63.appspot.com/o/credit-card.png?alt=media&token=5f5de210-6bda-4a7d-9350-93c3034e909a",
-            "buttons": [{
-                "text": "Buy",
-                "postback": ""
-            }],
-            "type": 1
-        }, {
-            "title": "Jeans @ £23.24",
-            "subtitle": "Blah Blah",
-            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/polytechnics-cbc63.appspot.com/o/loan.png?alt=media&token=4a939935-aa22-47b1-ae9b-4e468f461f18",
-            "buttons": [{
-                "text": "Buy",
-                "postback": ""
-            }],
-            "type": 1
-        }]
-
-
-    /*var list = {
-        "payload": {
-            "facebook": {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": "What do you want to do next?",
-                        "buttons": [{
-                                "type": "web_url",
-                                "url": "https://login.microsoftonline.com/bluebankb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_BlueBankSUSI&client_Id=0f7ef810-2f9c-424c-942a-48c6ea361d9a&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fgoogle.com%3A44316%2F.auth%2Flogin%2Faad%2Fcallback&scope=openid&response_type=id_token&prompt=login",
-                                "title": "Show Website"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Start Chatting",
-                                "payload": "USER_DEFINED_PAYLOAD"
-                            }
-                        ]
-                    }
-                }
-            }
-        }
-    }*/
+    var list = [];
 
     for (var i = 0; i < productData.length; i++) {
         var product = productData[i];
-        var item = {
-
+        var obj = {
             "title": product.title,
-            "image_url": product.image_url,
-            "subtitle": product.subtitle,
-            "default_action": {
-                "type": "web_url",
-                "url": product.url,
-                "messenger_extensions": true,
-                "webview_height_ratio": "tall"
-            },
+            "subtitle": "Blah Blah",
+            "imageUrl": product.imageUrl,
             "buttons": [{
-                "title": "View",
-                "type": "web_url",
-                "url": "https://google.com",
-                "messenger_extensions": true,
-                "webview_height_ratio": "tall"
-            }]
+                "text": "Buy",
+                "postback": ""
+            }],
+            "type": 1
         }
-        //list.payload.facebook.attachment.payload.elements.push(item);
+
+        list.push(obj);
     }
 
     return list;
