@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const $http = require('$http');
 
 const restService = express();
 
@@ -12,12 +13,23 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-    return res.json({
-        speech: speech,
-        source: 'webhook-echo',
-        "messages": fnProductList()
+
+
+    var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.size;
+
+    return $http.get('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
+        return res.json({
+            speech: speech,
+            source: 'webhook-echo-one',
+            "messages": fnProductList(response.data.products)
+        });
     });
+
+    return axios.get('https://api.github.com/users/codeheaven-io');
+
+    //var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+
+
 });
 
 restService.post('/slack-test', function(req, res) {
@@ -97,8 +109,8 @@ restService.post('/fb-test', function(req, res) {
 });
 
 
-function fnProductList() {
-
+function fnProductList(productData) {
+/*
     var productData = [{
         title: "Classic T-Shirt Collection",
         subtitle: "subtitle",
@@ -123,7 +135,7 @@ function fnProductList() {
         imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         price: "50",
         rating: "1"
-    }]
+    }]*/
 
     var list = [];
 
