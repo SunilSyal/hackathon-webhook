@@ -125,35 +125,13 @@ function fnProductList() {
         "payload": {
             "facebook": {
                 "attachment": {
-                    "type": "template",
+                    "type": "image",
                     "payload": {
-                        "template_type": "generic",
-                        "elements": [{
-                            "title": "Welcome to Peter\'s Hats",
-                            "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-                            "subtitle": "We\'ve got the right hat for everyone.",
-                            "default_action": {
-                                "type": "web_url",
-                                "url": "https://google.com",
-                                "messenger_extensions": true,
-                                "webview_height_ratio": "tall",
-                                "fallback_url": "https://google.com/"
-                            },
-                            "buttons": [{
-                                "type": "web_url",
-                                "url": "https://google.com",
-                                "title": "View Website"
-                            }, {
-                                "type": "postback",
-                                "title": "Start Chatting",
-                                "payload": "DEVELOPER_DEFINED_PAYLOAD"
-                            }]
-                        }]
+                        "url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$"
                     }
                 }
             }
-        },
-        "type": 4
+        }
     }
 
     /*var list = {
