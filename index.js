@@ -38,6 +38,20 @@ restService.post('/echo', function(req, res) {
                 });
             });
             break;
+
+            case "ShowHistory":
+
+                var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
+
+                return request('https://blitzapimonitor.herokuapp.com/blitz/orderHistory').then(function(response) {
+                    return res.json({
+                        speech: "Here is your order history",
+                        source: 'webhook-echo-one',
+                        "messages": fnProductList(JSON.parse(response).products)
+                    });
+                });
+                break;
+
     }
 
 
