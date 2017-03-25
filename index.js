@@ -20,7 +20,7 @@ restService.post('/echo', function(req, res) {
     console.log(productType)
 
     return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
-        console.log("Here I am")
+        console.log(response)
         return res.json({
             speech: "You may like",
             source: 'webhook-echo-one',
