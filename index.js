@@ -13,18 +13,34 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
+    console.log('=============' + req.body.result.action)
+    switch (req.body.result.action) {
+        case "FetchProducts":
 
-    var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
+            var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
 
-    return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
-        return res.json({
-            speech: "You may like",
-            source: 'webhook-echo-one',
-            "messages": fnProductList(JSON.parse(response).products)
-        });
-    });
+            return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
+                return res.json({
+                    speech: "You may like",
+                    source: 'webhook-echo-one',
+                    "messages": fnProductList(JSON.parse(response).products)
+                });
+            });
+            break;
 
-    return axios.get('https://api.github.com/users/codeheaven-io');
+        case "BuyProduct":
+            var productInfo = req.body.result.parameters.brand + '||' + req.body.result.parameters.price;
+
+            return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct?productInfo=' + productInfo).then(function(response) {
+                return res.json({
+                    speech: "Payment successful",
+                    source: 'webhook-echo-one'
+                });
+            });
+            break;
+    }
+
+
 
 });
 
@@ -142,7 +158,7 @@ function fnProductList(productData) {
             "imageUrl": product.imageUrl,
             "buttons": [{
                 "text": "Buy @ " + product.price,
-                "postback": ""
+                "postback": "Buy now: Brand - " + product.subtitle + ", Price - " + product.price
             }],
             "type": 1
         }
