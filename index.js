@@ -202,7 +202,7 @@ function fnProductList() {
                 "webview_height_ratio": "tall"
             }]
         }
-        list.payload.facebook.attachment.payload.elements.push(item);
+        //list.payload.facebook.attachment.payload.elements.push(item);
     }
 
     return list;
