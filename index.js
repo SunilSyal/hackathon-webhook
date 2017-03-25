@@ -24,7 +24,7 @@ restService.post('/echo', function(req, res) {
         return res.json({
             speech: "You may like",
             source: 'webhook-echo-one',
-            "messages": fnProductList(response.data.products)
+            "messages": fnProductList(response.products)
         });
     });
 
