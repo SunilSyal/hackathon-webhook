@@ -30,8 +30,7 @@ restService.post('/echo', function(req, res) {
                             }
                         }
                     }
-                },
-                "type": 4
+                }
             },
             {
                 "payload": {
