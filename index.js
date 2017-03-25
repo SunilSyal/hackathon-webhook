@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const $http = require('$http');
+//const $http = require('$http');
 
 const restService = express();
 
@@ -14,12 +14,12 @@ restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
 
-console.log("Entry = ==============")
+    console.log("Entry = ==============")
     var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
     console.log("--------------")
-console.log(productType)
+    console.log(productType)
     return $http.get('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
-      console.log("Here I am")
+        console.log("Here I am")
         return res.json({
             speech: speech,
             source: 'webhook-echo-one',
@@ -112,32 +112,32 @@ restService.post('/fb-test', function(req, res) {
 
 
 function fnProductList(productData) {
-/*
-    var productData = [{
-        title: "Classic T-Shirt Collection",
-        subtitle: "subtitle",
-        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        price: "20",
-        rating: "4"
-    }, {
-        title: "Classic T-Shirt Collection",
-        subtitle: "subtitle",
-        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        price: "30",
-        rating: "5"
-    }, {
-        title: "Classic T-Shirt Collection",
-        subtitle: "subtitle",
-        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        price: "40",
-        rating: "2"
-    }, {
-        title: "Classic T-Shirt Collection",
-        subtitle: "subtitle",
-        imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-        price: "50",
-        rating: "1"
-    }]*/
+    /*
+        var productData = [{
+            title: "Classic T-Shirt Collection",
+            subtitle: "subtitle",
+            imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+            price: "20",
+            rating: "4"
+        }, {
+            title: "Classic T-Shirt Collection",
+            subtitle: "subtitle",
+            imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+            price: "30",
+            rating: "5"
+        }, {
+            title: "Classic T-Shirt Collection",
+            subtitle: "subtitle",
+            imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+            price: "40",
+            rating: "2"
+        }, {
+            title: "Classic T-Shirt Collection",
+            subtitle: "subtitle",
+            imageUrl: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
+            price: "50",
+            rating: "1"
+        }]*/
 
     var list = [];
 
