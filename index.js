@@ -16,7 +16,7 @@ restService.post('/echo', function(req, res) {
     return res.json({
         speech: speech,
         source: 'webhook-echo',
-        "messages": [fnProductList()]
+        "messages": fnProductList()
     });
 });
 
@@ -121,105 +121,30 @@ function fnProductList() {
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }]
 
-    var list = {
-        "payload": {
-            "facebook": {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "list",
-                        "elements": [{
-                                "title": "Classic T-Shirt Collection",
-                                "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-                                "subtitle": "See all our colors",
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/shop_collection",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                "buttons": [{
-                                    "title": "View",
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/collection",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                }]
-                            },
-                            {
-                                "title": "Classic White T-Shirt",
-                                "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-                                "subtitle": "100% Cotton, 200% Comfortable",
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                "buttons": [{
-                                    "title": "Shop Now",
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/shop?item=100",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                }]
-                            },
-                            {
-                                "title": "Classic Blue T-Shirt",
-                                "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-                                "subtitle": "100% Cotton, 200% Comfortable",
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/view?item=101",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                "buttons": [{
-                                    "title": "Shop Now",
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/shop?item=101",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                }]
-                            },
-                            {
-                                "title": "Classic Black T-Shirt",
-                                "image_url": "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
-                                "subtitle": "100% Cotton, 200% Comfortable",
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/view?item=102",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                },
-                                "buttons": [{
-                                    "title": "Shop Now",
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/shop?item=102",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                                }]
-                            }
-                        ],
-                        "buttons": [{
-                            "title": "View More",
-                            "type": "postback",
-                            "payload": "payload"
-                        }]
-                    }
-                }
-            }
+    var list = [{
+            "type": 0,
+            "speech": ""
         },
-        "type": 4
-    }
+        {
+            "title": "Jeans @ £30",
+            "subtitle": "Blah Blah",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/polytechnics-cbc63.appspot.com/o/credit-card.png?alt=media&token=5f5de210-6bda-4a7d-9350-93c3034e909a",
+            "buttons": [{
+                "text": "Buy",
+                "postback": ""
+            }],
+            "type": 1
+        }, {
+            "title": "Jeans @ £23.24",
+            "subtitle": "Blah Blah",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/polytechnics-cbc63.appspot.com/o/loan.png?alt=media&token=4a939935-aa22-47b1-ae9b-4e468f461f18",
+            "buttons": [{
+                "text": "Buy",
+                "postback": ""
+            }],
+            "type": 1
+        }]
+
 
     /*var list = {
         "payload": {
