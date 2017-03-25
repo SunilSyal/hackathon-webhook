@@ -24,6 +24,19 @@ restService.post('/echo', function(req, res) {
                 "payload": {
                     "facebook": {
                         "attachment": {
+                            "type": "image",
+                            "payload": {
+                                "url": "https://petersapparel.com/img/shirt.png"
+                            }
+                        }
+                    }
+                },
+                "type": 4
+            },
+            {
+                "payload": {
+                    "facebook": {
+                        "attachment": {
                             "type": "template",
                             "payload": {
                                 "template_type": "button",
