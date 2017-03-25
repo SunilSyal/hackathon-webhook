@@ -16,24 +16,7 @@ restService.post('/echo', function(req, res) {
     return res.json({
         speech: speech,
         source: 'webhook-echo',
-        "messages": [{
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text": "What do you want to do next?",
-                "buttons": [{
-                        "type": "web_url",
-                        "url": "https://petersapparel.parseapp.com",
-                        "title": "Show Website"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Start Chatting",
-                        "payload": "USER_DEFINED_PAYLOAD"
-                    }
-                ]
-            }
-        }]
+        "messages": [fnProductList()]
     });
 });
 
@@ -139,16 +122,23 @@ function fnProductList() {
     }]
 
     var list = {
-        "type": "template",
         "payload": {
-            "template_type": "list",
-            "elements": [],
-            "buttons": [{
-                "title": "View More",
-                "type": "postback",
-                "payload": "payload"
-            }]
-        }
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "list",
+                        "elements": [],
+                        "buttons": [{
+                            "title": "View More",
+                            "type": "postback",
+                            "payload": "payload"
+                        }]
+                    }
+                }
+            }
+        },
+        "type": 4
     }
 
     for (var i = 0; i < productData.length; i++) {
@@ -172,7 +162,7 @@ function fnProductList() {
                 "webview_height_ratio": "tall"
             }]
         }
-        list.payload.elements.push(item);
+        list.payload.facebook.attachment.payload.elements.push(item);
     }
 
     return list;
