@@ -121,7 +121,7 @@ function fnProductList() {
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }]
 
-    var list = {
+    /*var list = {
         "payload": {
             "facebook": {
                 "attachment": {
@@ -139,6 +139,46 @@ function fnProductList() {
             }
         },
         "type": 4
+    }*/
+
+    var list = {
+        "payload": {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "What do you want to do next?",
+                        "buttons": [{
+                                "type": "web_url",
+                                "url": "https://login.microsoftonline.com/bluebankb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_BlueBankSUSI&client_Id=0f7ef810-2f9c-424c-942a-48c6ea361d9a&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fgoogle.com%3A44316%2F.auth%2Flogin%2Faad%2Fcallback&scope=openid&response_type=id_token&prompt=login",
+                                "title": "Show Website"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Start Chatting",
+                                "payload": "USER_DEFINED_PAYLOAD"
+                            }
+                        ]
+                    }
+                }
+            },
+            "kik": {
+                "type": "",
+                "body": ""
+            },
+            "slack": {
+                "text": "",
+                "attachments": []
+            },
+            "telegram": {
+                "text": ""
+            },
+            "viber": {
+                "type": "text",
+                "text": ""
+            }
+        }
     }
 
     for (var i = 0; i < productData.length; i++) {
