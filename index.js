@@ -29,7 +29,7 @@ restService.post('/echo', function(req, res) {
             break;
 
         case "BuyProduct":
-            var productInfo = req.body.result.parameters.brand + '||' + req.body.result.parameters.price;
+            var productInfo = req.body.result.parameters.brand + '||' + req.body.result.parameters.number;
 
             return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct?productInfo=' + productInfo).then(function(response) {
                 return res.json({
