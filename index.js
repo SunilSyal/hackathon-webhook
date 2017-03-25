@@ -135,7 +135,7 @@ function fnProductList() {
     }
 
     for (var i = 0; i < productData.length; i++) {
-        product = productData[i];
+        var product = productData[i];
         var item = {
 
             "title": product.title,
