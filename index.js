@@ -147,7 +147,7 @@ console.log(productData)
         var product = productData[i];
         var obj = {
             "title": product.title,
-            "subtitle": "Blah Blah",
+            "subtitle": product.subtitle,
             "imageUrl": product.imageUrl,
             "buttons": [{
                 "text": "Buy",
