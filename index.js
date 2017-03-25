@@ -15,7 +15,7 @@ restService.use(bodyParser.json());
 restService.post('/echo', function(req, res) {
 
 
-    var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.size;
+    var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
 
     return $http.get('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
         return res.json({
