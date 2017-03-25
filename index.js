@@ -157,8 +157,8 @@ function fnProductList(productData) {
             "subtitle": product.subtitle + " (Rating: " + product.rating + ")",
             "imageUrl": product.imageUrl,
             "buttons": [{
-                "text": "Buy @ " + product.price,
-                "postback": "Buy now: Brand - " + product.subtitle + ", Price - " + Number((product.price).split('£')[1])
+                "text": "Buy @ £" + product.price,
+                "postback": "Buy now: Brand - " + product.subtitle + ", Price - " + Number(product.price)
             }],
             "type": 1
         }
