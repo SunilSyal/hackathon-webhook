@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-//const $http = require('$http');
+var request = require('request-promise');
 
 const restService = express();
 
@@ -18,7 +18,8 @@ restService.post('/echo', function(req, res) {
     var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
     console.log("--------------")
     console.log(productType)
-    return $http.get('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
+
+    return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
         console.log("Here I am")
         return res.json({
             speech: speech,
