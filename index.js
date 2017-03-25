@@ -121,7 +121,7 @@ function fnProductList() {
         url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }]
 
-    /*var list = {
+    var list = {
         "payload": {
             "facebook": {
                 "attachment": {
@@ -137,11 +137,10 @@ function fnProductList() {
                     }
                 }
             }
-        },
-        "type": 4
-    }*/
+        }
+    }
 
-    var list = {
+    /*var list = {
         "payload": {
             "facebook": {
                 "attachment": {
@@ -162,24 +161,9 @@ function fnProductList() {
                         ]
                     }
                 }
-            },
-            "kik": {
-                "type": "",
-                "body": ""
-            },
-            "slack": {
-                "text": "",
-                "attachments": []
-            },
-            "telegram": {
-                "text": ""
-            },
-            "viber": {
-                "type": "text",
-                "text": ""
             }
         }
-    }
+    }*/
 
     for (var i = 0; i < productData.length; i++) {
         var product = productData[i];
@@ -197,7 +181,7 @@ function fnProductList() {
             "buttons": [{
                 "title": "View",
                 "type": "web_url",
-                "url": "https://peterssendreceiveapp.ngrok.io/collection",
+                "url": "https://google.com",
                 "messenger_extensions": true,
                 "webview_height_ratio": "tall"
             }]
