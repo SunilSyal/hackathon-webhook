@@ -101,24 +101,24 @@ function fnProductList() {
 
     var productData = [{
         title: "Classic T-Shirt Collection",
-        image_url: "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         subtitle: "See all our colors",
-        url: "https://peterssendreceiveapp.ngrok.io/shop_collection"
+        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         subtitle: "See all our colors",
-        url: "https://peterssendreceiveapp.ngrok.io/shop_collection"
+        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         subtitle: "See all our colors",
-        url: "https://peterssendreceiveapp.ngrok.io/shop_collection"
+        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }, {
         title: "Classic T-Shirt Collection",
-        image_url: "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+        image_url: "http://asset1.marksandspencer.com/is/image/mands/SD_01_T38_7237_KC_X_EC_0?$PRODVIEWER_SUB$",
         subtitle: "See all our colors",
-        url: "https://peterssendreceiveapp.ngrok.io/shop_collection"
+        url: "http://www.marksandspencer.com/pure-cotton-v-neck-2-pocket-cardigan/p/p22500660?image=SD_01_T38_7237_KC_X_EC_90&color=OATMEAL&prevPage=plp&pdpredirect"
     }]
 
     var list = {
