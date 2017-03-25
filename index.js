@@ -14,13 +14,9 @@ restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
 
-    console.log("Entry = ==============")
     var productType = req.body.result.parameters.color + req.body.result.parameters.dress + req.body.result.parameters.number;
-    console.log("--------------")
-    console.log(productType)
 
     return request('https://blitzapimonitor.herokuapp.com/blitz/getProduct/' + productType).then(function(response) {
-        console.log(response)
         return res.json({
             speech: "You may like",
             source: 'webhook-echo-one',
@@ -29,9 +25,6 @@ restService.post('/echo', function(req, res) {
     });
 
     return axios.get('https://api.github.com/users/codeheaven-io');
-
-    //var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-
 
 });
 
@@ -141,16 +134,14 @@ function fnProductList(productData) {
         }]*/
 
     var list = [];
-console.log('++++++++++++++++++++++++++++++')
-console.log(productData)
     for (var i = 0; i < productData.length; i++) {
         var product = productData[i];
         var obj = {
             "title": product.title,
-            "subtitle": product.subtitle,
+            "subtitle": product.subtitle + " (Rating: " + product.rating + ")",
             "imageUrl": product.imageUrl,
             "buttons": [{
-                "text": "Buy",
+                "text": "Buy @ " + product.price,
                 "postback": ""
             }],
             "type": 1
@@ -161,9 +152,6 @@ console.log(productData)
 
     return list;
 }
-
-
-
 
 restService.listen((process.env.PORT || 8000), function() {
     console.log("Server up and listening");
